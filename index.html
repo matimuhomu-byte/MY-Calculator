@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="screen-frame">
+        <div class="screen">
+            <div class="status-row">
+                <span id="st-shift">SHIFT</span>
+                <span id="st-deg" class="lit">DEG</span>
+                <span id="st-m">M</span>
+            </div>
+            <div class="expr" id="expr">&nbsp;</div>
+            <div class="result" id="result">0</div>
+        </div>
+    </div>
+
+    <div class="keys">
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button id="shift-btn" class="shift" onclick="toggleShift()">SHIFT</button>
+            <button class="alpha" onclick="toggleDeg()"><span class="sub">RAD</span>DEG</button>
+            <button class="num" onclick="press('(')"><span class="sub">%</span>(</button>
+            <button class="num" onclick="press(')')"><span class="sub">,</span>)</button>
+            <button class="num" onclick="backspace()">DEL</button>
+        </div>
+
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button onclick="fn('sin')"><span class="sub">sin&#8315;&sup1;</span>sin</button>
+            <button onclick="fn('cos')"><span class="sub">cos&#8315;&sup1;</span>cos</button>
+            <button onclick="fn('tan')"><span class="sub">tan&#8315;&sup1;</span>tan</button>
+            <button onclick="fn('log')"><span class="sub">10&#894;</span>log</button>
+            <button onclick="fn('ln')"><span class="sub">e&#894;</span>ln</button>
+        </div>
+
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button onclick="fn('sqrt')"><span class="sub">x&sup2;</span>&#8730;</button>
+            <button onclick="press('^')"><span class="sub">&#8731;</span>x^y</button>
+            <button onclick="press('!')"><span class="sub">nPr</span>x!</button>
+            <button onclick="press('pi')"><span class="sub">e</span>&pi;</button>
+            <button onclick="memRecall()"><span class="sub">M+</span>MR</button>
+        </div>
+
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button class="num" onclick="press('7')">7</button>
+            <button class="num" onclick="press('8')">8</button>
+            <button class="num" onclick="press('9')">9</button>
+            <button class="op" onclick="clearAll()">AC</button>
+            <button class="op" onclick="memAdd()">M+</button>
+        </div>
+
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button class="num" onclick="press('4')">4</button>
+            <button class="num" onclick="press('5')">5</button>
+            <button class="num" onclick="press('6')">6</button>
+            <button class="op" onclick="press('*')">&times;</button>
+            <button class="op" onclick="press('/')">&divide;</button>
+        </div>
+
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button class="num" onclick="press('1')">1</button>
+            <button class="num" onclick="press('2')">2</button>
+            <button class="num" onclick="press('3')">3</button>
+            <button class="op" onclick="press('+')">+</button>
+            <button class="op" onclick="press('-')">&minus;</button>
+        </div>
+
+        <div class="row" style="grid-template-columns:repeat(5,1fr);">
+            <button class="num wide" onclick="press('0')">0</button>
+            <button class="num" onclick="press('.')">.</button>
+            <button class="num" onclick="press('Ans')">Ans</button>
+            <button class="eq" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+
+
+    <script src="java.js"></script>
+</body>
+
+</html>

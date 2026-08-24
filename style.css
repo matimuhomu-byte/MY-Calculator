@@ -1,0 +1,180 @@
+ :root {
+     --body-dark: #2b2c30;
+     --body-darker: #1c1d20;
+     --body-edge: #404247;
+     --lcd-bg: #c7cdc0;
+     --lcd-bg-deep: #b7bdae;
+     --lcd-ink: #1f2620;
+     --lcd-ink-dim: #5b6455;
+     --key-num: #3a3c41;
+     --key-num-text: #f2f1ec;
+     --key-fn: #dedcd3;
+     --key-fn-text: #232323;
+     --key-shift: #e08a2c;
+     --key-shift-text: #241300;
+     --key-alpha: #c0392b;
+     --key-alpha-text: #2a0000;
+     --key-eq: #2f6e4a;
+     --key-eq-text: #eafff0;
+     --accent-blue: #3a6ea5;
+     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+ }
+
+ * {
+     box-sizing: border-box;
+ }
+
+ body {
+     margin: 0;
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: radial-gradient(ellipse at top, #3a3b40 0%, #17181a 70%);
+     padding: 24px;
+ }
+
+
+ .brand-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     padding: 0 4px 10px;
+ }
+
+ .screen-frame {
+     background: var(--body-darker);
+     border-radius: 6px;
+     padding: 10px 12px 14px;
+     box-shadow: inset 0 2px 6px rgba(0, 0, 0, .6);
+ }
+
+ .screen {
+     background: linear-gradient(180deg, var(--lcd-bg), var(--lcd-bg-deep));
+     border-radius: 3px;
+     padding: 8px 10px 10px;
+     min-height: 78px;
+     box-shadow: inset 0 1px 3px rgba(0, 0, 0, .35);
+     font-family: 'Consolas', 'DejaVu Sans Mono', monospace;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .status-row {
+     display: flex;
+     gap: 10px;
+     font-size: 9px;
+     font-weight: 700;
+     color: var(--lcd-ink-dim);
+     letter-spacing: .5px;
+     margin-bottom: 4px;
+     min-height: 11px;
+ }
+
+ .status-row .lit {
+     color: var(--lcd-ink);
+ }
+
+ .expr {
+     color: var(--lcd-ink-dim);
+     font-size: 14px;
+     min-height: 18px;
+     text-align: right;
+     word-break: break-all;
+     letter-spacing: .5px;
+ }
+
+ .result {
+     color: var(--lcd-ink);
+     font-size: 30px;
+     text-align: right;
+     line-height: 1.15;
+     min-height: 34px;
+     word-break: break-all;
+     font-variant-numeric: tabular-nums;
+     letter-spacing: .5px;
+ }
+
+ .keys {
+     margin-top: 16px;
+     display: grid;
+     gap: 7px;
+ }
+
+ .row {
+     display: grid;
+     gap: 7px;
+ }
+
+ button {
+     border: none;
+     border-radius: 8px;
+     font-size: 12.5px;
+     font-weight: 600;
+     padding: 10px 2px;
+     cursor: pointer;
+     color: var(--key-fn-text);
+     background: var(--key-fn);
+     box-shadow: 0 2px 0 rgba(0, 0, 0, .35), 0 1px 0 rgba(255, 255, 255, .15) inset;
+     transition: transform .04s ease, box-shadow .04s ease;
+     font-family: inherit;
+     line-height: 1.15;
+     position: relative;
+ }
+
+ button:active {
+     transform: translateY(2px);
+     box-shadow: 0 0 0 rgba(0, 0, 0, .35);
+ }
+
+ button .sub {
+     display: block;
+     font-size: 8px;
+     font-weight: 700;
+     color: var(--key-shift);
+     margin-bottom: 1px;
+ }
+
+ .num {
+     background: var(--key-num);
+     color: var(--key-num-text);
+     box-shadow: 0 2px 0 #1e1f22, 0 1px 0 rgba(255, 255, 255, .08) inset;
+ }
+
+ .shift {
+     background: var(--key-shift);
+     color: var(--key-shift-text);
+ }
+
+ .alpha {
+     background: var(--key-alpha);
+     color: var(--key-alpha-text);
+ }
+
+ .eq {
+     background: var(--key-eq);
+     color: var(--key-eq-text);
+     grid-column: span 2;
+ }
+
+ .op {
+     background: var(--accent-blue);
+     color: #eef4fb;
+ }
+
+ .wide {
+     grid-column: span 2;
+ }
+
+ #shift-btn.active {
+     box-shadow: 0 0 0 2px #ffd18a, 0 2px 0 rgba(0, 0, 0, .35);
+     border-radius: 50%;
+ }
+
+
+
+ @media (prefers-reduced-motion: reduce) {
+     button {
+         transition: none;
+     }
+ }
